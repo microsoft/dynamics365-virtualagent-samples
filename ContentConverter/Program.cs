@@ -9,9 +9,16 @@ namespace ContentConverter
     {
         static void Main(string[] args)
         {
-            Converter converter = new Converter();
-            converter.Process(args);
-
+            try
+            {
+               Converter converter = new Converter();
+               converter.Process(args);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"Error Occured : {e.ToString()}");
+            }
+            
             Console.WriteLine("Press Any Key To Terminate...");
             Console.ReadLine();
         }
